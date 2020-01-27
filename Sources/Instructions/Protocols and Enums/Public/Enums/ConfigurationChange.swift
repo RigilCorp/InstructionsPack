@@ -1,6 +1,6 @@
-// Instructions.swift
+// ConfigurationChange.swift
 //
-// Copyright (c) 2015, 2016 Frédéric Maquin <fred@ephread.com>
+// Copyright (c) 2018 Frédéric Maquin <fred@ephread.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,11 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
+import Foundation
 
-struct Constants {
-    static let overlayFadeAnimationDuration: TimeInterval = 0.3
-    static let coachMarkFadeAnimationDuration: TimeInterval = 0.3
-
-    static let overlayColor = #colorLiteral(red: 0.9086670876, green: 0.908688426, blue: 0.9086769819, alpha: 0.65)
+/// Define the type of change involved during a configuration change.
+public enum ConfigurationChange {
+    case nothing, size, statusBar
 }

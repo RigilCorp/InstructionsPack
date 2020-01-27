@@ -1,4 +1,4 @@
-// Instructions.swift
+// CoachMarkView.swift
 //
 // Copyright (c) 2015, 2016 Frédéric Maquin <fred@ephread.com>
 //
@@ -22,9 +22,33 @@
 
 import UIKit
 
-struct Constants {
-    static let overlayFadeAnimationDuration: TimeInterval = 0.3
-    static let coachMarkFadeAnimationDuration: TimeInterval = 0.3
+class OverlaySnapshotView: UIView {
+    var visualEffectView: UIVisualEffectView! {
+        willSet {
+            if visualEffectView == nil { return }
+            visualEffectView.removeFromSuperview()
+        }
 
-    static let overlayColor = #colorLiteral(red: 0.9086670876, green: 0.908688426, blue: 0.9086769819, alpha: 0.65)
+        didSet {
+            if visualEffectView != nil {
+                self.addSubview(visualEffectView)
+            }
+        }
+    }
+    var backgroundView: UIView! {
+        willSet {
+            if backgroundView == nil { return }
+            backgroundView.removeFromSuperview()
+        }
+
+        didSet {
+            if backgroundView != nil {
+                self.addSubview(backgroundView)
+            }
+        }
+    }
+
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        return nil
+    }
 }

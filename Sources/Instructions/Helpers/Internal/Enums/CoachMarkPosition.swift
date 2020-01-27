@@ -1,4 +1,4 @@
-// Instructions.swift
+// CoachMarkPosition.swift
 //
 // Copyright (c) 2015, 2016 Frédéric Maquin <fred@ephread.com>
 //
@@ -22,9 +22,20 @@
 
 import UIKit
 
-struct Constants {
-    static let overlayFadeAnimationDuration: TimeInterval = 0.3
-    static let coachMarkFadeAnimationDuration: TimeInterval = 0.3
+/// Define the horizontal position of the coach mark.
+enum CoachMarkPosition {
+    var layoutAttribute: NSLayoutConstraint.Attribute {
+        switch self {
+        case .leading: return .leading
+        case .center: return .centerX
+        case .trailing: return .trailing
+        }
+    }
 
-    static let overlayColor = #colorLiteral(red: 0.9086670876, green: 0.908688426, blue: 0.9086769819, alpha: 0.65)
+    case leading
+    case center
+    case trailing
 }
+
+/// Define the horizontal position of the arrow.
+typealias ArrowPosition = CoachMarkPosition

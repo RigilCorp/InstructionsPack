@@ -1,4 +1,4 @@
-// Instructions.swift
+// CoachMarkSkipView.swift
 //
 // Copyright (c) 2015, 2016 Frédéric Maquin <fred@ephread.com>
 //
@@ -22,9 +22,21 @@
 
 import UIKit
 
-struct Constants {
-    static let overlayFadeAnimationDuration: TimeInterval = 0.3
-    static let coachMarkFadeAnimationDuration: TimeInterval = 0.3
+/// A protocol to which all the "skip views" must conform.
+public protocol CoachMarkSkipView: class {
+    /// The control that will trigger the stop, in the display flow.
+    var skipControl: UIControl? { get }
+    var asView: UIView? { get }
+}
 
-    static let overlayColor = #colorLiteral(red: 0.9086670876, green: 0.908688426, blue: 0.9086769819, alpha: 0.65)
+public extension CoachMarkSkipView {
+    var skipControl: UIControl? {
+        return nil
+    }
+}
+
+public extension CoachMarkSkipView where Self: UIView {
+    var asView: UIView? {
+        return self
+    }
 }

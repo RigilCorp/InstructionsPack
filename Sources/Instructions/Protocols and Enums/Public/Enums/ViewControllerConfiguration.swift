@@ -1,6 +1,6 @@
-// Instructions.swift
+// ViewControllerConfiguration.swift
 //
-// Copyright (c) 2015, 2016 Frédéric Maquin <fred@ephread.com>
+// Copyright (c) 2018 Frédéric Maquin <fred@ephread.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,9 +22,22 @@
 
 import UIKit
 
-struct Constants {
-    static let overlayFadeAnimationDuration: TimeInterval = 0.3
-    static let coachMarkFadeAnimationDuration: TimeInterval = 0.3
+// TODO: Remove the override once the bug is fixed.
+// swiftlint:disable identifier_name
 
-    static let overlayColor = #colorLiteral(red: 0.9086670876, green: 0.908688426, blue: 0.9086769819, alpha: 0.65)
+public enum RotationStyle {
+    case systemDefined
+    case automatic
+    case manual
+}
+
+public enum StatusBarVisibility {
+    case systemDefined
+    case visible
+    case hidden
+}
+
+public enum InterfaceOrientations {
+    case systemDefined
+    case userDefined(as: UIInterfaceOrientationMask)
 }

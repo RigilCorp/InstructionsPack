@@ -1,6 +1,6 @@
-// Instructions.swift
+// Instructions.h
 //
-// Copyright (c) 2015, 2016 Frédéric Maquin <fred@ephread.com>
+// Copyright (c) 2015 Frédéric Maquin <fred@ephread.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,11 +20,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
+#import <UIKit/UIKit.h>
 
-struct Constants {
-    static let overlayFadeAnimationDuration: TimeInterval = 0.3
-    static let coachMarkFadeAnimationDuration: TimeInterval = 0.3
+//! Project version number for Instructions.
+FOUNDATION_EXPORT double InstructionsVersionNumber;
 
-    static let overlayColor = #colorLiteral(red: 0.9086670876, green: 0.908688426, blue: 0.9086769819, alpha: 0.65)
-}
+//! Project version string for Instructions.
+FOUNDATION_EXPORT const unsigned char InstructionsVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <Instructions/PublicHeader.h>
+
+

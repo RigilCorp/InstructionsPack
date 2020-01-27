@@ -1,4 +1,4 @@
-// Instructions.swift
+// CoachMarkView.swift
 //
 // Copyright (c) 2015, 2016 Frédéric Maquin <fred@ephread.com>
 //
@@ -22,9 +22,16 @@
 
 import UIKit
 
-struct Constants {
-    static let overlayFadeAnimationDuration: TimeInterval = 0.3
-    static let coachMarkFadeAnimationDuration: TimeInterval = 0.3
+class MaskView: UIView {
 
-    static let overlayColor = #colorLiteral(red: 0.9086670876, green: 0.908688426, blue: 0.9086769819, alpha: 0.65)
+    override public class var layerClass: AnyClass {
+        return CAShapeLayer.self
+    }
+
+    var shapeLayer: CAShapeLayer {
+        //swiftlint:disable force_cast
+        return layer as! CAShapeLayer
+        //swiftlint:enable force_cast
+    }
+
 }
